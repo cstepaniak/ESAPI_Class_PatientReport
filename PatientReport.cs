@@ -7,6 +7,8 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using VMS.TPS.Common.Model.API;
 using VMS.TPS.Common.Model.Types;
+using PatientReport.Views;
+using PatientReport.ViewModels;
 
 // TODO: Replace the following version attributes by creating AssemblyInfo.cs. You can do this in the properties of the Visual Studio project.
 [assembly: AssemblyVersion("1.0.0.1")]
@@ -24,8 +26,14 @@ namespace VMS.TPS
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        public void Execute(ScriptContext context /*, System.Windows.Window window, ScriptEnvironment environment*/) {
+        public void Execute(ScriptContext context, System.Windows.Window window, ScriptEnvironment environment) {
             // TODO : Add here the code that is called when the script is launched from Eclipse.
+            var view = new BeamView();
+            view.DataContext = new BeamViewModel(context.PlanSetup);
+            window.Content = view;
+            window.Height = 600;
+            window.Width = 1000;
+            window.Title = "Patient Report";
         }
     }
 }

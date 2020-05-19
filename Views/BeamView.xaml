@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="PatientReport.Views.BeamView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PatientReport.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="900" Background="SkyBlue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" /><!--"Auto" means take only the width you need for the data-->
+            <RowDefinition Height="*" /><!--"*" means use all the remaining space.  Multiple *'s will give equal spacing.  you can put a factor in front of a * to get a larger spacing for that element-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.4*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Field Details" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="12" HorizontalAlignment="Center"/>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="0">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="ID" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="1">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="Name" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="2">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="Machine" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="3">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="Energy" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="4">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="Dose Rate" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="5">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="Gantry" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="6">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="Coll" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="7">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="Couch" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="8">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="X [cm]" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="9">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="Y [cm]" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="10">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="SSD [cm]" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="0 0 0 1" BorderBrush="Navy" Grid.Column="11">
+            <TextBlock FontWeight="Bold" HorizontalAlignment="Center" Text="MU" />
+        </Border>
+        <ItemsControl ItemsSource="{Binding BeamData}" Grid.Row="2" Grid.ColumnSpan="12">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1.4*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="0">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding BeamId}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="1">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding BeamName}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="2">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding MachineId}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="3">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding Energy}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="4">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding DoseRate}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="5">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding GantryAngle}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="6">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding CollimatorAngle}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="7">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding CouchAngle}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="8">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding FieldX}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="9">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding FieldY}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="10">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding SSD}" />
+                        </Border>
+                        <Border  BorderThickness="0 1 0 0" BorderBrush="Navy" Grid.Column="11">
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding MU}" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>
