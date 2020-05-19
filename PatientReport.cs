@@ -9,6 +9,9 @@ using VMS.TPS.Common.Model.API;
 using VMS.TPS.Common.Model.Types;
 using PatientReport.Views;
 using PatientReport.ViewModels;
+using DVHPlot.ViewModels;
+using DVHPlot.Views;
+using Prism.Events;
 
 // TODO: Replace the following version attributes by creating AssemblyInfo.cs. You can do this in the properties of the Visual Studio project.
 [assembly: AssemblyVersion("1.0.0.1")]
@@ -22,16 +25,21 @@ namespace VMS.TPS
 {
     public class Script
     {
-        public Script() {
-        }
+        public Script() { }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public void Execute(ScriptContext context, System.Windows.Window window, ScriptEnvironment environment) {
             // TODO : Add here the code that is called when the script is launched from Eclipse.
-            var view = new BeamView();
-            view.DataContext = new BeamViewModel(context.PlanSetup);
+            OxyPlot.Wpf.AngleAxis varianSucks = new OxyPlot.Wpf.AngleAxis();  //This is here to get Eclipse to load OxyPlot.
+            IEventAggregator events = new EventAggregator();
+            var view = new MainView();
+            view.DataContext = new MainViewModel(
+                new DVHViewModel(context.PlanSetup, events),
+                new DVHSelectionViewModel(context.PlanSetup, events),
+                new BeamViewModel(context.PlanSetup)
+                );
             window.Content = view;
-            window.Height = 600;
+            window.Height = 1000;
             window.Width = 1000;
             window.Title = "Patient Report";
         }
