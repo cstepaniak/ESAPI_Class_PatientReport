@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientReport", "PatientReport.csproj", "{300B7B5B-1F31-44BC-B614-CB158E9EA222}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{300B7B5B-1F31-44BC-B614-CB158E9EA222}.Debug|x64.ActiveCfg = Debug|x64
+		{300B7B5B-1F31-44BC-B614-CB158E9EA222}.Debug|x64.Build.0 = Debug|x64
+		{300B7B5B-1F31-44BC-B614-CB158E9EA222}.Release|x64.ActiveCfg = Release|x64
+		{300B7B5B-1F31-44BC-B614-CB158E9EA222}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED14E37B-B21C-4D5B-98B6-211D175C78AE}
+	EndGlobalSection
+EndGlobal
